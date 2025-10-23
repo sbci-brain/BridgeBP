@@ -92,7 +92,7 @@ function [result] = construct_continuous_sc(discrete_sc, sbci_parc, sbci_map, va
             area_ab = area_a' * area_b;
 
             % Retrieve the SC value from the full discrete SC matrix
-            sc_value = full_discrete_sc(i, j);
+            sc_value = full_discrete_sc(roi_index_i, roi_index_j);
 
             % Scale the SC value by the combined areas (to ensure larger ROIs contribute more
             scaled_sc_value = sc_value.*(sum(area_a) * sum(area_b))* area_ab/sum(sum(area_ab.^2)); 
